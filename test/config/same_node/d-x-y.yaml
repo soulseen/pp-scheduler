@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-4
+  namespace: scheduler-test
+  labels:
+    ks-pipeline: d-x-y
+spec:
+  schedulerName: ks-scheduler
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
