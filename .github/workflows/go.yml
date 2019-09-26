@@ -1,5 +1,5 @@
 name: Go
-on: [push]
+on: [pull_request]
 jobs:
 
   build:
@@ -17,7 +17,11 @@ jobs:
       uses: actions/checkout@v1
 
     - name: test
-      run: make test
+      run: |
+        env
+        pwd
+        go get -u  github.com/onsi/ginkgo/ginkgo
+        make test
 
     - name: Build
       run: make build
