@@ -3,7 +3,7 @@ IMG ?= zhuxiaoyang/ks-scheduler:v1
 
 # Build manager binary
 manager: fmt vet
-	GOOS=linux GOARCH=amd64 go build -mod=vendor -a -o ks-scheduler /root/cmd
+	GOOS=linux GOARCH=amd64 go build -mod=vendor -a -o bin/ks-scheduler ./cmd
 
 # Build the docker image
 docker-build:
